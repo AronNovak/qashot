@@ -103,7 +103,7 @@ function _qa_shot_generate_backstop_config(Drupal\Core\Entity\EntityInterface $e
     dpm("Copying the template files failed.");
     return FALSE;
   }
-
+/*
   $command = "reference";
   if (FALSE === _qa_shot_run_backstop_command($command, $configPath)) {
     dpm("Running the " . $command . " command has failed.");
@@ -115,7 +115,7 @@ function _qa_shot_generate_backstop_config(Drupal\Core\Entity\EntityInterface $e
     dpm("Running the " . $command . " command has failed.");
     return FALSE;
   }
-
+*/
 /*
   $command = "openReport";
   if (FALSE === _qa_shot_run_backstop_command($command, $configPath)) {
@@ -343,4 +343,13 @@ function _qa_shot_map_viewport_to_array($viewport) {
  */
 function qa_shot_cron() {
   // @todo: run scheduled tests
+}
+
+/**
+ * Implements hook_entity_revision_delete().
+ */
+function qa_shot_entity_revision_delete(
+  Drupal\Core\Entity\EntityInterface $entity
+) {
+
 }
